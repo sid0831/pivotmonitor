@@ -8,25 +8,22 @@ toggle () {
 				normal)
 					xrandr --output $PVT --rotate inverted
 					unset PVT
-					exit 0
 					;;
 				inverted)
 					xrandr --output $PVT --rotate normal
 					unset PVT
-					exit 0
 					;;
 				left)
 					xrandr --output $PVT --rotate right
 					unset PVT
-					exit 0
 					;;
 				right)
 					xrandr --output $PVT --rotate left
 					unset PVT
-					exit 0
 					;;
 			esac
 		done
+	exit 0
 	else
 		for MNT in "${PIVOT[@]}"; do
 			PVT=$(echo $MNT | cut -d ',' -f 1)
@@ -35,26 +32,23 @@ toggle () {
 					normal)
 						xrandr --output $PVT --rotate inverted
 						unset PVT
-						exit 0
 						;;
 					inverted)
 						xrandr --output $PVT --rotate normal
 						unset PVT
-						exit 0
 						;;
 					left)
 						xrandr --output $PVT --rotate right
 						unset PVT
-						exit 0
 						;;
 					right)
 						xrandr --output $PVT --rotate left
 						unset PVT
-						exit 0
 						;;
 				esac
 			fi
 		done
+    exit 0
 	fi		
 }
 
@@ -66,25 +60,22 @@ clockwise () {
                                 normal)
                                         xrandr --output $PVT --rotate right
                                         unset PVT
-                                        exit 0
                                         ;;
                                 inverted)
                                         xrandr --output $PVT --rotate left
                                         unset PVT
-                                        exit 0
                                         ;;
                                 left)
                                         xrandr --output $PVT --rotate normal
                                         unset PVT
-                                        exit 0
                                         ;;
                                 right)
                                         xrandr --output $PVT --rotate inverted
                                         unset PVT
-                                        exit 0
                                         ;;
                         esac
                 done
+        exit 0
         else
                 for MNT in "${PIVOT[@]}"; do
                         PVT=$(echo $MNT | cut -d ',' -f 1)
@@ -93,26 +84,23 @@ clockwise () {
                                         normal)
                                                 xrandr --output $PVT --rotate right
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                         inverted)
                                                 xrandr --output $PVT --rotate left
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                         left)
                                                 xrandr --output $PVT --rotate normal
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                         right)
                                                 xrandr --output $PVT --rotate inverted
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                 esac
                         fi
                 done
+        exit 0
         fi
 }
 
@@ -124,25 +112,22 @@ counterclockwise () {
                                 normal)
                                         xrandr --output $PVT --rotate left
                                         unset PVT
-                                        exit 0
                                         ;;
                                 inverted)
                                         xrandr --output $PVT --rotate right
                                         unset PVT
-                                        exit 0
                                         ;;
                                 left)
                                         xrandr --output $PVT --rotate inverted
                                         unset PVT
-                                        exit 0
                                         ;;
                                 right)
                                         xrandr --output $PVT --rotate normal
                                         unset PVT
-                                        exit 0
                                         ;;
                         esac
                 done
+        exit 0
         else
                 for MNT in "${PIVOT[@]}"; do
                         PVT=$(echo $MNT | cut -d ',' -f 1)
@@ -151,26 +136,23 @@ counterclockwise () {
                                         normal)
                                                 xrandr --output $PVT --rotate left
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                         inverted)
                                                 xrandr --output $PVT --rotate right
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                         left)
                                                 xrandr --output $PVT --rotate inverted
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                         right)
                                                 xrandr --output $PVT --rotate normal
                                                 unset PVT
-                                                exit 0
                                                 ;;
                                 esac
                         fi
                 done
+        exit 0
         fi
 }
 
