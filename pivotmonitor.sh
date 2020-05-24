@@ -186,18 +186,35 @@ for MON in "${OUTPUTARRAY[@]}"; do
 	fi
 done
 
+unset PIVOTOUTPUT
+
 while test $# -gt 0; do
 	case "$1" in
 		-t|--toggle)
-			toggle
+            if [ -z $PIVOTOUTPUT ]; then
+                echo -e "You must specify an output device first."
+                exit 1
+            else
+            	toggle
+			fi
 			shift
 			;;
 		--cw|--clockwise)
-			clockwise
+			if [ -z $PIVOTOUTPUT ]; then
+                echo -e "You must specify an output device first."
+                exit 1
+            else
+            	clockwise
+			fi
 			shift
 			;;
 		--ccw|--conterclockwise)
-			counterclockwise
+			if [ -z $PIVOTOUTPUT ]; then
+                echo -e "You must specify an output device first."
+                exit 1
+            else
+            	counterclockwise
+			fi
 			shift
 			;;
 		-v|--version)
