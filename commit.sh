@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 VERSINFO=$(cat $PWD/pivotmonitor.sh | grep -iE 'Monitor pivot script v' | sed -E 's/([ \t].*)(echo -e "Monitor pivot script v)(.*)(\\nW.*)/\3/g')
-VERSARRAY=( $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]*)/\1/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]*)/\3/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]*)/\5/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]*)/\7/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]*)/\9/') )
+VERSARRAY=( $(echo "$VERSINFO" | sed -E 's/([0-9]*)(\.)([0-9]*)(\.)([0-9]*)(\-)([0-9]*)(\.)([0-9]*)/\1/') $(echo "$VERSINFO" | sed -E 's/([0-9]*)(\.)([0-9]*)(\.)([0-9]*)(\-)([0-9]*)(\.)([0-9]*)/\3/') $(echo "$VERSINFO" | sed -E 's/([0-9]*)(\.)([0-9]*)(\.)([0-9]*)(\-)([0-9]*)(\.)([0-9]*)/\5/') $(echo "$VERSINFO" | sed -E 's/([0-9]*)(\.)([0-9]*)(\.)([0-9]*)(\-)([0-9]*)(\.)([0-9]*)/\7/') $(echo "$VERSINFO" | sed -E 's/([0-9]*)(\.)([0-9]*)(\.)([0-9]*)(\-)([0-9]*)(\.)([0-9]*)/\9/') )
 
 commitcode () {
   local QMARK=1
@@ -14,7 +14,7 @@ verschange () {
   local COMMITCOUNT=$(git rev-list --count master)
   VERSARRAY[4]=$(( $COMMITCOUNT + 1 ))
   echo -e "Marking new version...\nOLD: v$VERSINFO\nNEW: v${VERSARRAY[0]}.${VERSARRAY[1]}.${VERSARRAY[2]}-${VERSARRAY[3]}.${VERSARRAY[4]}"
-  sed -E -i "s/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]*)/${VERSARRAY[0]}.${VERSARRAY[1]}.${VERSARRAY[2]}\-${VERSARRAY[3]}.${VERSARRAY[4]}/g" $PWD/pivotmonitor.sh; QMARK=$?
+  sed -E -i "s/([0-9]*)(\.)([0-9]*)(\.)([0-9]*)(\-)([0-9]*)(\.)([0-9]*)/${VERSARRAY[0]}.${VERSARRAY[1]}.${VERSARRAY[2]}\-${VERSARRAY[3]}.${VERSARRAY[4]}/g" $PWD/pivotmonitor.sh; QMARK=$?
   return $QMARK
 }
 
