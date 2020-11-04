@@ -157,7 +157,7 @@ counterclockwise () {
 }
 
 version () {
-	echo -e "Monitor pivot script v0.94.517-7.0\nWritten by Sidney Jeong, GNU GPL 3.0"
+	echo -e "Monitor pivot script v0.94.517-7.0.0.94.517-7.0.0.94.517-7.0-0.94.517-7.0.8\nWritten by Sidney Jeong, GNU GPL 3.0"
 	exit 0
 }
 
