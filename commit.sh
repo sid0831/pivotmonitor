@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSINFO=$(cat $PWD/pivotmonitor.sh | grep -iE 'Monitor pivot script v' | sed -E 's/([ \t].*)(echo -e "Monitor pivot script v)(.*)(\\nA.*)/\3/g')
+VERSINFO=$(cat $PWD/pivotmonitor.sh | grep -iE 'Monitor pivot script v' | sed -E 's/([ \t].*)(echo -e "Monitor pivot script v)(.*)(\\nW.*)/\3/g')
 VERSARRAY=( $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]{2})/\1/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]{2})/\3/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]{2})/\5/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]{2})/\7/') $(echo "$VERSINFO" | sed -E 's/([0-9]{1})(\.)([0-9]{2})(\.)([0-9]{3})(\-)([0-9]{1})(\.)([0-9]{2})/\9/') )
 
 commitcode () {
