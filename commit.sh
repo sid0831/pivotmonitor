@@ -13,7 +13,7 @@ verschange () {
   local COMMITCOUNT=$(git rev-list --count master)
   VERSARRAY[4]=$(( $COMMITCOUNT + 1 ))
   echo -e "Marking new version...\nOLD: v$VERSINFO\nNEW: v${VERSARRAY[0]}.${VERSARRAY[1]}.${VERSARRAY[2]}-${VERSARRAY[3]}.${VERSARRAY[4]}"
-  sed -E -i "s/(Monitor pivot script v)(.*)(\\nW.*)/Monitor pivot script v${VERSARRAY[0]}.${VERSARRAY[1]}.${VERSARRAY[2]}\-${VERSARRAY[3]}.${VERSARRAY[4]}\\n Written by Sidney Jeong, GNU GPL 3.0/g" $PWD/pivotmonitor.sh; QMARK=$?
+  sed -E -i "s/(Monitor pivot script v)(.*)(\\nW.*)/Monitor pivot script v${VERSARRAY[0]}.${VERSARRAY[1]}.${VERSARRAY[2]}\-${VERSARRAY[3]}.${VERSARRAY[4]}\\nWritten by Sidney Jeong, GNU GPL 3.0/g" $PWD/pivotmonitor.sh; QMARK=$?
   return $QMARK
 }
 
