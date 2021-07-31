@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# A simple script that rotates the monitor outputs.
+# Written 2020-2021 by Sidney Jeong, MPL 2.0
+
 toggle () {
 	if [ $PIVOTOUTPUT == "all" ]; then
 		for MNT in "${PIVOT[@]}"; do
@@ -157,7 +160,7 @@ counterclockwise () {
 }
 
 version () {
-	echo -e "Monitor pivot script v0.94.517-7.0\nWritten by Sidney Jeong, GNU GPL 3.0"
+	echo -e "Monitor pivot script v0.94.517-15.0\nWritten by Sidney Jeong, MPL 2.0"
 	exit 0
 }
 
